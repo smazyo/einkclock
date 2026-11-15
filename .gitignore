@@ -2,3 +2,4 @@ non-git/
 *.code-workspace
 rpi/venv/
 rpi/screenshot.png
+rpi/config.conf

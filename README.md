@@ -18,3 +18,7 @@ Here is a screenshot of the rendered webpage:
 
 Raspberry Pi Zero WH runs Raspbian 13 with desktop mode disabled. If you are attempting to do this make sure that in `sudo raspi-config` SPI and IC2 are enabled. I used Samba to transfer the files to the pi once set up.
 
+
+## AI usage disclaimer
+
+No AI generated code was used in this project. AI was used for some debugging (specific issues around )
