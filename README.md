@@ -6,8 +6,15 @@ The build consists of two parts: a web server to generate the image that gets re
 
 ## Web Server
 
-The page is served using Apache, configured for PHP, running in a Proxmox LXC - it is not hosted on the Pi itself. It is configured this way so that I can easily adjust it in future. A PHP server is used because HTML and CSS are powerful tools for graphics and layouts.
+The page is served using Apache, configured for PHP, running in a Proxmox LXC - it is not hosted on the Pi itself. It is configured this way so that I can easily adjust it in future. PHP was chosen HTML and CSS are powerful tools for graphics and layouts, it is straightforward to edit/preview in the browser, and PHP produces a rendered
 
-The page itself outputs a strictly black and white image within a 250 x 122 px area, which is the dimensions of the e-ink screen. It has the time in various regions and displays a random Pokemon. The Pokemon images have been upscaled (nearest neighbour) then dithering has been used to provide detail. Here is a screenshot:
+The page itself outputs a strictly black and white image within a 250 x 122 px area, which is the dimensions of the e-ink screen. It has the time in various regions and displays a random Pokemon. The Pokemon images have been upscaled (nearest neighbour) then dithering has been used to provide detail. 
+
+Here is a screenshot of the rendered webpage:
 
 ![Screenshot showing the Pokemon Xatu](/readme/sample.png)
+
+## Raspberry Pi setup
+
+Raspberry Pi Zero WH runs Raspbian 13 with desktop mode disabled. If you are attempting to do this make sure that in `sudo raspi-config` SPI and IC2 are enabled. I used Samba to transfer the files to the pi once set up.
+
