@@ -21,4 +21,4 @@ Raspberry Pi Zero WH runs Raspbian 13 with desktop mode disabled. If you are att
 
 ## AI usage disclaimer
 
-No AI generated code was used in this project. AI was used for some debugging (specific issues around )
+No AI generated code was used in this project. AI was used for some debugging (specific issues around RPi hardware).
