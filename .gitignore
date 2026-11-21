@@ -3,3 +3,8 @@ non-git/
 site/venv/
 site/screenshot.png
 site/config.conf
+
+site/requirements.txt
+
+# ignore root directory for local testing
+screenshot.png
