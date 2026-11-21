@@ -3,8 +3,10 @@ non-git/
 site/venv/
 site/screenshot.png
 site/config.conf
-
 site/requirements.txt
+
+rpi/config.conf
+rpi/TP_lib
 
 # ignore root directory for local testing
 screenshot.png

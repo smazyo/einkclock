@@ -83,7 +83,7 @@
             position: absolute;
             top: 7px;
             left: 16px;
-            font-size: 1rem;
+            font-size: 16px;
             font-family: sans-serif;
             z-index: 10;
         }
@@ -104,20 +104,20 @@
             position: absolute;
             top: 7px;
             left: 7px;
-            font-size: 4rem;
+            font-size: 64px;
             font-family: sans-serif;
 
         }
 
         .country-name {
-            font-size: 0.5rem;
+            font-size: 10px;
         }
 
         .fact-block {
             position: absolute;
             top: 9px;
             left: 10px;
-            font-size: 5px;
+            font-size: 4px;
             /* outline: 1px solid red; */
             width: 230px;
             height: 102px;
