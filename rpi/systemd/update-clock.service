@@ -1,0 +1,10 @@
+[Unit]
+Description=Update the e-ink display
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=(username)
+WorkingDirectory=/home/(username)/eink
+ExecStart=/usr/bin/python3 /home/(username)/eink/updateclock.py

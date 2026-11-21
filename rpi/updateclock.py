@@ -1,12 +1,11 @@
 #!/usr/bin/python
-    
-from TP_lib import gt1151
-from TP_lib import epd2in13_V4
-
-from PIL import Image,ImageDraw,ImageFont
+from PIL import Image
 import configparser
 from os import path
 import requests
+
+# "TP_lib" directory as supplied from manufacturer
+from TP_lib import epd2in13_V4
 
 config = configparser.ConfigParser()
 basepath = path.dirname(path.realpath(__file__))
@@ -23,7 +22,6 @@ epd.init(epd.FULL_UPDATE)
 print('initted. fetching image')
 with open(SCREENSHOT_IMAGE, 'wb') as file:
     file.write(requests.get(site_url).content)
-
 
 print('image retrieved. adjusting then outputting')
 img = Image.open(SCREENSHOT_IMAGE).rotate(180).convert("1", dither=Image.Dither.NONE)

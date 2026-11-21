@@ -1,0 +1,11 @@
+[Unit]
+Description=Schedule updating the e-ink display every 10 mins
+
+[Timer]
+OnCalendar=*:0/10 
+Persistent=true
+Unit=update-clock.service
+OnBootSec=1min
+
+[Install]
+WantedBy=timers.target
