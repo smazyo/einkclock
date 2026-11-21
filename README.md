@@ -2,7 +2,7 @@
 
 This is a hobby project to use an e-ink device as a clock that sits on my desk. The screen is a "Waveshare 2.13inch Touch E-Paper E-Ink Display for Raspberry Pi Zero", and the Pi itself is a Pi Zero WH (not 2nd gen.)
 
-The build consists of two parts: a web server to generate the image that gets rendered on the e-ink screen, and a Raspberry Pi that pulls the image from the server and displays it on the device. Because the refresh rate of the screen is low, I have it update in 10 minute increments. The main purpose (aside from playing around with the technology) is to see at a glance what time it is in a few different time zones - Canada, Europe, and the Philippines.
+The build consists of two parts: a web server to generate the image that gets rendered on the e-ink screen, and a Raspberry Pi that pulls the image from the server and displays it on the device. Because the refresh rate of the screen is somewhat low, I have it update in 10 minute increments rather than every minute. The main purpose (aside from playing around with the technology) is to see at a glance what time it is in a few different time zones - Canada, Europe, and the Philippines.
 
 ## Web Server
 
@@ -22,17 +22,17 @@ The page is served using Apache, configured for PHP, running in a Proxmox LXC - 
 
 The script 'screenshot-site.py' is set up as executable using Apache's CGI module. This script uses the Playwright library to take open a Chromium instance and take a screenshot, then return that screenshot to the browser.
 
-It is important to configure Playwright correctly in your venv.
-
 ## Raspberry Pi setup
 
 Raspberry Pi Zero WH runs Raspbian 13 with desktop mode disabled. If you are attempting to do this make sure that in `sudo raspi-config` SPI and IC2 are enabled. I used Samba to transfer the files to the pi once set up.
 
-Once the python script to fetch the image and load it onto the device was created, a systemd was used to ensure the script runs on init and every 10 minutes. 
+Once the python script to fetch the image and load it onto the device was created, a systemd service & timer was used to ensure the script runs on init and every 10 minutes. 
 
 ## Possible improvements
 
 There are some dithering / anti-aliasing issues caused by the use of HTML - Chromium doesn't have an easy CSS property for font anti-aliasing. Some small tweaks will help.
+
+Design changes to the image are straightforward by updating the image server.
 
 ## AI usage disclaimer
 
